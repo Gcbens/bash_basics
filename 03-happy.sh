@@ -4,9 +4,9 @@ echo "You are happy?"
 read answer
 
 if [ "$answer" = "yes" ]; then
-   echo "Smile :)"
+   echo "That is wonderful to hear!"
 else
-   echo "Still Smile :)"
+   echo "I hope your day gets better soon!"
 fi
 
 # exercise: write a script that prints whether today is
@@ -15,11 +15,10 @@ fi
 echo "Which day of a week is today?"
 read day
 
-case "$day" in
-   Saturday|saturday|Sunday|sunday)
-      echo "Hooray. Today is the weekend. Enjoy yourself. Be ready for the next week."
-      ;;
-   *)
-      echo "Today is a weekday. Stay focused on your work."
-      ;;
-esac
+# Conflict Resolved: Using the parallel-universe logic and messages
+if [[ ${day,,} == "saturday" ]] || [[ ${day,,} == "sunday" ]]
+then 
+   echo "It is the weekend! Time to relax and recharge."
+else 
+   echo "It is a weekday. You are doing great, keep going!"
+fi
