@@ -4,9 +4,9 @@ echo "You are happy?"
 read answer
 
 if [ "$answer" = "yes" ]; then
-   echo "Smile :)"
+   echo "That is wonderful to hear!"
 else
-   echo "Still Smile :)"
+   echo "I hope your day gets better soon!"
 fi
 
 # here are the other string comparison operators
@@ -16,9 +16,10 @@ fi
 # the weekend or not
 echo "Which day of a week is today?"
 read day
-if [[ ${day,,} == "saturday" ]] | [[ ${day,,} == "sunday" ]]
+# Fixed syntax: Use || for 'OR' logic
+if [[ ${day,,} == "saturday" ]] || [[ ${day,,} == "sunday" ]]
 then 
-   echo "Horayyyy!! Today is the weekend. Enjoy yourself! Be ready for the next week."
+   echo "It is the weekend! Time to relax and recharge."
 else 
-   echo "Today is a weekday. Keep focus on your work."
+   echo "It is a weekday. You are doing great, keep going!"
 fi
